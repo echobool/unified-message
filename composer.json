@@ -1,0 +1,23 @@
+{
+    "name": "scctedu/unified-message",
+    "description": "unified message",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "echobool",
+            "email": "ljy518338@163.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Scctedu\\UnifiedMessage\\": "src"
+        },
+        "files": [
+            "src/constant.php"
+        ]
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^6.2",
+        "php": ">=5.6"
+    }
+}
