@@ -31,9 +31,9 @@ trait Rsa
      * @param string 签名编码（base64/hex/bin）
      * @return mixed
      */
-    public function sign($data)
+    public function sign($data, $code = 'base64')
     {
-        //去掉为空的项
+        //去掉这空的项
         foreach ($data as $key => $value) {
             if (empty($value)) unset($data[$key]);
         }
