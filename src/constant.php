@@ -17,4 +17,5 @@ define('CHANNEL_SMS','sms');//短信
 define('CHANNEL_EMAIL','email');//邮件
 define('CHANNEL_PUSH','push');//推送
 define('CHANNEL_INSTANT','instant');//即时消息
+define('CHANNEL_API','api');//接口调用
 

@@ -61,6 +61,35 @@ trait HasHttpRequest
         ]);
     }
 
+
+    /**
+     * @param $endpoint
+     * @param array $params
+     * @param array $headers
+     * @return array
+     */
+    protected function put($endpoint, $params = [], $headers = [])
+    {
+        return $this->request('put', $endpoint, [
+            'headers' => $headers,
+            'form_params' => $params,
+        ]);
+    }
+
+    /**
+     * @param $endpoint
+     * @param array $params
+     * @param array $headers
+     * @return array
+     */
+    protected function delete($endpoint, $params = [], $headers = [])
+    {
+        return $this->request('delete', $endpoint, [
+            'headers' => $headers,
+            'form_params' => $params,
+        ]);
+    }
+
     /**
      * Make a http request.
      *
