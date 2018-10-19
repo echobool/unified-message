@@ -167,16 +167,30 @@ class UnifiedMessage
                 $parameter = array_merge($parameter, $this->pushData);
                 break;
             case CHANNEL_EMAIL:
+
                 break;
             case CHANNEL_INSTANT:
 
                 break;
+            case CHANNEL_API:
+
+                break;
+
         }
         //进行签名
         $parameter['sign'] = $this->setPrivateKey($this->config['private_key'])->sign($parameter);
 
         $this->parameter = $parameter;
 
+        return $this;
+    }
+
+    /**
+     * @param mixed $endPointUrl
+     */
+    public function setEndPointUrl($endPointUrl = '')
+    {
+        $this->endPointUrl = $this->config['base_url'] . ($endPointUrl ? '/' . $endPointUrl : '');
         return $this;
     }
 
@@ -188,7 +202,6 @@ class UnifiedMessage
     public function __construct(array $config)
     {
         $this->config = new Config($config);
-        $this->endPointUrl = $this->config['end_point_url'];
         $this->setPrivateKey($this->config['private_key']);
     }
 
