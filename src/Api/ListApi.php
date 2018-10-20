@@ -9,7 +9,7 @@
 namespace Scctedu\UnifiedMessage\Api;
 
 
-class ShowApi extends Api
+class ListApi extends Api
 {
     protected $endPointUrl;
 
@@ -18,12 +18,12 @@ class ShowApi extends Api
         $this->endPointUrl = $this->config['base_url'] . $pointUrl;
     }
 
-    public function send($pointUrl,$parameter)
+    public function send($pointUrl, $parameter)
     {
         $this->setParameter($parameter);
 
         $this->setEndPointUrl($pointUrl);
 
-        return $this->get($this->endPointUrl, $this->parameter) ;
+        return $this->get($this->endPointUrl, $this->parameter);
     }
 }

@@ -54,9 +54,10 @@ class UnifiedMessageApi
      * @param mixed $parameter
      * @return mixed
      */
-    public function setParameter($parameter)
+    public function setParameter($parameter = [])
     {
         $this->parameter = $parameter;
+        $this->parameter['app_id'] = $this->config['app_id'];
         return $this;
     }
 
@@ -93,7 +94,7 @@ class UnifiedMessageApi
         //调用api中的send方法
         $this->setCurrentApi();
 
-       return $this->currentApi->send($this->pointUrl,$this->parameter);
+        return $this->currentApi->send($this->pointUrl, $this->parameter);
     }
 
 
@@ -109,7 +110,7 @@ class UnifiedMessageApi
         return $Api;
     }
 
-    protected function formatApiClassName( $name)
+    protected function formatApiClassName($name)
     {
         if (class_exists($name)) {
             return $name;

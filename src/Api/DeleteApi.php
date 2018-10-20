@@ -16,11 +16,11 @@ class DeleteApi extends Api
 
     public function setEndPointUrl($pointUrl)
     {
-        $this->endPointUrl = $this->config['base_url'] . $pointUrl. '/' . $this->parameter['id'];
+        $this->endPointUrl = $this->config['base_url'] . $pointUrl;
     }
 
 
-    public function send($pointUrl,$parameter)
+    public function send($pointUrl, $parameter)
     {
         $this->setParameter($parameter);
 
